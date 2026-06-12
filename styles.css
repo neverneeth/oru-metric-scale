@@ -118,7 +118,7 @@ body {
     height: 100%;
 }
 
-#rulerCanvas {
+#canvas {
     position: absolute;
     top: 0;
     left: 0;
@@ -126,7 +126,7 @@ body {
     height: 100%;
 }
 
-.ruler-readout {
+#readout {
     position: absolute;
     top: 1rem;
     left: 50%;
