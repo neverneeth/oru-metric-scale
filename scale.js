@@ -8,7 +8,7 @@ const canvas = document.getElementById('canvas');
 const ctx = canvas.getContext('2d');
 const readout = document.getElementById('readout');
 const dpiValueEl = document.getElementById('dpiValue');
-const RULER_HEIGHT_CSS = 96;
+const SCALE_HEIGHT_CSS = 96;
 const TICK_CONFIG = [
   { modulo: 10, height: 28, width: 1.0, labelOffset: 42 }, 
   { modulo:  5, height: 18, width: 0.6 },                  
@@ -26,7 +26,7 @@ function setPPMFromDPI(dpi) {
 function draw() {
     const dpr    = window.devicePixelRatio || 1;
     const cssW   = canvas.parentElement.clientWidth;
-    const cssH   = RULER_HEIGHT_CSS;
+    const cssH   = SCALE_HEIGHT_CSS;
     canvas.width  = Math.round(cssW * dpr);
     canvas.height = Math.round(cssH * dpr);
     canvas.style.height = cssH + 'px';
@@ -108,7 +108,7 @@ function updatePointer(clientX)
     const x = clientX - rect.left;
     pointerx = x;
     const mm = x/ppm;
-    readout.textContent = mm.toFixed(2) + ' mm';
+    readout.textContent = mm.toFixed(1);
     draw();
 }
 
