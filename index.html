@@ -11,14 +11,29 @@
     <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Lusitana:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="camera-input-container">
-        <video id="camera-input" autoplay></video>
+    <main class="layout">
+        <aside class="panel panel--camera">
+            <p class="panel__eyebrow">Calibration</p>
+            <p class="panel__placeholder">I might take camera input here </p>
+            <div class="dpi-readout">
+                <span class="dpi-readout__value" id="dpiValue">96</span>
+                <span class="dpi-readout__unit">PPI</span>
+                <span class="dpi-readout__source">default</span>
+            </div>
+        </aside>
 
+        <section class="panel panel--scale">
+            <p class="panel__eyebrow">Scale</p>
+            <div class="scale-container">
+                <canvas id="scaleCanvas" width="400" height="100"></canvas>
+            </div>
+            <div class="scale-readout">
+                <span class="scale-readout__val" id="scaleValue">0</span>
+                <span class="scale-readout__unit">mm</span>
+            </div>
+        </section>
 
-    </div>
-    <div class="container">
-        <h1>There will be a scale here</h1>
-        <p>Soon</p>
-    </div>
+    </main>
+    <script src="scale.js"> </script>
 </body>
 </html>

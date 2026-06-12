@@ -1,21 +1,77 @@
+:root {
+  --bg:            #efefed;
+  --surface:       #ffffff;
+  --ink:           #1a1a18;
+  --ink-2:         #6b6b67;
+  --ink-3:         #aeada8;
+  --border:        #ddddd9;
+  --accent:        #c17f3f; 
 
-.instrument-sans-FONT {
-  font-family: "Instrument Sans", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 400;
-  font-style: normal;
-  font-variation-settings:
-    "wdth" 100;
+  --font-sans: "Instrument Sans", sans-serif;
+  --font-mono: "Courier New", monospace;
+
+  --ppm: 3.7795;  
 }
 
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 
 body {
-  font-family: "Instrument Sans", sans-serif;
-  background-color: #e0e0e0;
-  color: #333;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--font-sans);
+    min-height: 100svh;
+    display: flex;
+    align-items: stretch;
 }
+
+.layout {
+    display: grid;
+    grid-template-columns: 280px 2fr;
+    width: 100%;
+    min-height: 100svh;
+}
+
+@media (max-width: 600px) {
+    .layout {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto 1fr;
+    }
+}
+
+.panel {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.panel--camera {
+    background: var(--bg);
+    border-right: 1px solid var(--border);
+    justify-content: flex-end;
+}
+
+.panel--ruler {
+    background: var(--bg);
+    justify-content: center;
+}
+.panel__eyebrow {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--ink-3);
+    /* pin to top of panel */
+    position: absolute;
+    top: 2rem;
+}
+
+.panel{
+    position: relative;
+}
+
 
